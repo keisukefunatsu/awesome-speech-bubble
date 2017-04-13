@@ -6,6 +6,7 @@ vendor/
 *.sql
 *.tar.gz
 *.zip
+js/build.js
 
 # Ignore release folder
 awesome-speech-bubble/
