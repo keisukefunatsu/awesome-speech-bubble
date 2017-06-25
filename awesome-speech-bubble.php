@@ -26,12 +26,12 @@ class AwesomeSpeechBubble
 {
 
 	static function install() {
-		add_option( 'awesome_speech_bubble_data', '' );
+		// add_option( 'awesome_speech_bubble_data', '' );
 	}
 
 	public function register(){
 		add_action( 'plugins_loaded', array( $this, 'plugins_loaded' ) );
-		add_shortcode('awesome_speech_bubble', array( $this, 'handle_shortcode' ) );
+		// add_shortcode('awesome_speech_bubble', array( $this, 'handle_shortcode' ) );
 	}
 
 	/**
