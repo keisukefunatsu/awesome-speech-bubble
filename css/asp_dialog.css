@@ -1,0 +1,75 @@
+.asp_dialog_left {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;/* 3 */
+    align-items: center;    /* 4 */
+}
+asp_avatar {
+    flex: 1
+}
+
+.asp_message_left,
+.asp_message_right {
+    flex: 3
+}
+.asp_message_left {
+    position: relative;
+    display: inline-block;
+    margin: 1.5em 0 1.5em 15px;
+    padding: 7px 10px;
+    min-width: 120px;
+    max-width: 100%;
+    color: #555;
+    font-size: 16px;
+    background: #e0edff;
+}
+
+.asp_message_left:before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -30px;
+    margin-top: -15px;
+    border: 15px solid transparent;
+    border-right: 15px solid #e0edff;
+}
+
+.asp_message_left p {
+    margin: 0;
+    padding: 0;
+}
+
+
+.asp_message_right {
+    position: relative;
+    display: inline-block;
+    margin: 1.5em 15px 1.5em 0;
+    padding: 7px 10px;
+    min-width: 120px;
+    max-width: 100%;
+    color: #555;
+    font-size: 16px;
+    background: #e0edff;
+}
+
+.asp_message_right:before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin-top: -15px;
+    border: 15px solid transparent;
+    border-left: 15px solid #e0edff;
+}
+
+.asp_message_right p {
+    margin: 0;
+    padding: 0;
+}
+
+.asp_dialog_right {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;/* 3 */
+    align-items: center;    /* 4 */
+}

@@ -3,6 +3,7 @@
   "version": "0.0.3",
   "description": "A starting point for using VueJS in WordPress plugins. This is designed to be hacked and changed.",
   "dependencies": {
+    "jquery": "^3.2.1",
     "modal-vue": "0.0.3",
     "vue": "^2.1.8"
   },
