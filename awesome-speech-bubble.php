@@ -40,9 +40,10 @@ class AwesomeSpeechBubble {
     public function plugins_loaded() {
         add_action( 'wp_enqueue_scripts', array( $this, 'asb_wp_enqueue_scripts' ) );
         add_action( 'admin_enqueue_scripts', array( $this, 'asb_admin_enqueue_scripts' ) );
-        add_action( 'edit_form_after_title', array( $this, 'display_app' ) );
+        add_action( 'edit_form_after_title', array( $this, 'asb_display_app' ) );
         add_action( 'wp_ajax_awesome_speech_bubble', array( $this, 'wp_ajax_awesome_speech_bubble' ) );
         add_action( 'wp_ajax_nopriv_awesome_speech_bubble', array( $this, 'wp_ajax_awesome_speech_bubble' ) );
+        add_action('media_buttons', array( $this, 'add_asb_modal_button' ) );
         add_shortcode( 'asp_sc', array( $this, 'asp_shortcode' ) );
     }
 
@@ -75,8 +76,19 @@ class AwesomeSpeechBubble {
      * @param  none
      * @return none
      */
-    public function display_app() {
+    public function asb_display_app() {
         echo '<div id="app"></div>';
+    }
+
+
+    /**
+     * Add Custom button
+     *
+     * @param  none
+     * @return none
+     */
+    public function add_asb_modal_button() {
+        echo '<a href="#" id="asb_modal" class="button asb_show_modal">Add Speech Bubble</a>';
     }
 
     public function asb_admin_enqueue_scripts() {
