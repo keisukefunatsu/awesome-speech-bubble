@@ -43,8 +43,8 @@ class AwesomeSpeechBubble {
         add_action( 'edit_form_after_title', array( $this, 'asb_display_app' ) );
         add_action( 'wp_ajax_awesome_speech_bubble', array( $this, 'wp_ajax_awesome_speech_bubble' ) );
         add_action( 'wp_ajax_nopriv_awesome_speech_bubble', array( $this, 'wp_ajax_awesome_speech_bubble' ) );
-        add_action('media_buttons', array( $this, 'add_asb_modal_button' ) );
-        add_shortcode( 'asp_sc', array( $this, 'asp_shortcode' ) );
+        // add_action('media_buttons', array( $this, 'add_asb_modal_button' ) );
+        add_shortcode( 'asb_sc', array( $this, 'asb_shortcode' ) );
     }
 
     /**
@@ -64,9 +64,9 @@ class AwesomeSpeechBubble {
         }
         wp_enqueue_style(
             'awesome-speech-bubble-style',
-            plugins_url( 'css/asp_dialog.css', __FILE__ ),
+            plugins_url( 'css/asb_dialog.css', __FILE__ ),
             array(),
-            filemtime( dirname( __FILE__ ) . '/css/asp_dialog.css' )
+            filemtime( dirname( __FILE__ ) . '/css/asb_dialog.css' )
         );
     }
 
@@ -155,19 +155,19 @@ class AwesomeSpeechBubble {
      *
      * @return string HTML
      */
-    public function asp_shortcode( array $attr ) {
+    public function asb_shortcode( array $attr ) {
         $user_id = $attr[ 'id' ];
         $message = $attr[ 'message' ];
         $position = $attr[ 'pos' ];
         $size = $attr[ 'size' ];
         $avatar = get_avatar( $user_id, $size );
         ?>
-        <div class="asp_dialog_style">
-            <div class="asp_dialog_<?php echo $position; ?>">
-                <div class="asp_avatar">
+        <div class="asb_dialog_style">
+            <div class="asb_dialog_<?php echo $position; ?>">
+                <div class="asb_avatar_<?php echo $position; ?>">
                     <?php echo $avatar; ?>
                 </div>
-                <div class="asp_message_<?php echo $position; ?>">
+                <div class="asb_message_<?php echo $position; ?>">
                     <p><?php echo $message; ?></p>
                 </div>
             </div>

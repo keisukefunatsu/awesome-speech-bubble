@@ -4,7 +4,7 @@ import VueResource from 'vue-resource'
 
 window.onload = function () {
     Vue.use(VueResource)
-    new Vue({
+    var vm = new Vue({
         el: '#app',
         render: h => h(App)
     });
