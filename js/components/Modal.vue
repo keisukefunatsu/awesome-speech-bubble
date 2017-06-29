@@ -51,6 +51,7 @@
                 <p>
                   <strong>Text</strong>
                   <textarea v-model="message" placeholder="enter text"></textarea>
+                  {{arrangeText}}
                 </p>
               </slot>
             </div>
@@ -96,6 +97,11 @@
         insertShortCode : function() {
             send_to_editor( '[asb_sc id="' + this.selectedUser + '" message="' + this.message +'" pos="' + this.selectedPosition + '" size="' + this.selectedSize + '"]' )
         },
+      },
+      computed: {
+        arrangeText : function() {
+          return this.message.replace(/\r\n/g, "<br /><br />")
+        }
       },
       created: function() {
         var params = awesome_speech_bubble_args

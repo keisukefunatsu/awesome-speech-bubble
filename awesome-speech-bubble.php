@@ -163,11 +163,11 @@ class AwesomeSpeechBubble {
         $avatar = get_avatar( $user_id, $size );
         ?>
         <div class="asb_dialog_style">
-            <div class="asb_dialog_<?php echo $position; ?>">
-                <div class="asb_avatar_<?php echo $position; ?>">
+            <div class="asb_dialog asb_dialog_<?php echo $position; ?>">
+                <div class="asb_avatar asb_avatar_<?php echo $position; ?>">
                     <?php echo $avatar; ?>
                 </div>
-                <div class="asb_message_<?php echo $position; ?>">
+                <div class="asb_message asb_message_<?php echo $position; ?>">
                     <p><?php echo $message; ?></p>
                 </div>
             </div>

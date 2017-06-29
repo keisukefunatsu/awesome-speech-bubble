@@ -1,22 +1,29 @@
-.asp_dialog_left {
+.asb_dialog_left {
     display: flex;
     flex-direction: row;
-    justify-content: center;/* 3 */
-    align-items: center;    /* 4 */
+    /*justify-content: center;*/
+    align-items: center;
 }
-.asp_avatar {
-    flex: 1
+.asb_dialog_right {
+    display: flex;
+    flex-direction: row-reverse;
+    /*justify-content: center;*/
+    align-items: center;
 }
 
-.asp_message_left,
-.asp_message_right {
-    flex: 3
+.asb_avatar {
+    width: auto;
 }
-.asp_message_left {
+
+.asb_message_left,
+.asb_message_right {
+  width: auto;
+}
+.asb_message_left {
     position: relative;
     display: inline-block;
     margin: 1.5em 0 1.5em 15px;
-    padding: 7px 10px;
+    padding: 0;
     min-width: 120px;
     max-width: 100%;
     color: #555;
@@ -24,7 +31,7 @@
     background: #e0edff;
 }
 
-.asp_message_left:before{
+.asb_message_left:before{
     content: "";
     position: absolute;
     top: 50%;
@@ -34,17 +41,19 @@
     border-right: 15px solid #e0edff;
 }
 
-.asp_message_left p {
+.asb_message_left p {
     margin: 0;
-    padding: 0;
+    padding: 15px;
+    word-wrap: break-word;
+    line-height: 2;
 }
 
 
-.asp_message_right {
+.asb_message_right {
     position: relative;
     display: inline-block;
     margin: 1.5em 15px 1.5em 0;
-    padding: 7px 10px;
+    padding: 0;
     min-width: 120px;
     max-width: 100%;
     color: #555;
@@ -52,7 +61,7 @@
     background: #e0edff;
 }
 
-.asp_message_right:before{
+.asb_message_right:before{
     content: "";
     position: absolute;
     top: 50%;
@@ -62,14 +71,9 @@
     border-left: 15px solid #e0edff;
 }
 
-.asp_message_right p {
+.asb_message_right p {
     margin: 0;
-    padding: 0;
-}
-
-.asp_dialog_right {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;/* 3 */
-    align-items: center;    /* 4 */
+    padding: 15px;
+    word-wrap: break-word;
+    line-height: 2;
 }
